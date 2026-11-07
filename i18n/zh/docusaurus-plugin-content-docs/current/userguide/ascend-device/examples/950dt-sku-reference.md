@@ -28,4 +28,4 @@ HAMi chart 中启用的 Ascend950DT 配置以 9582 这一 SKU 为目标，按整
 |       8 |   24 GiB | DT_950x                    |
 |       8 |   16 GiB | DT_950y                    |
 
-来源表格未说明 126 GiB 条目上星号的含义。不要在 `devices.ascend.configs` 中为同一个 `chipName` 启用多个配置项：调度器无法通过该字段区分这些 SKU。`devices.ascend.configs` 中的一项会作用于所有上报该 `chipName` 的节点，因此只有在验证目标 SKU 的实际身份与容量后，才能替换 9582 条目。
+来源表格未说明 126 GiB 条目上星号的含义。不要在 `devices.ascend.configs` 中为同一个 `chipName` 启用多个配置项：调度器无法通过该字段区分这些 SKU。`devices.ascend.configs` 中的一项会作用于所有上报该 `chipName` 的节点，因此替换 9582 条目前，必须验证目标 SKU 以及所有上报同一 `chipName` 的现有节点（包括 9582 节点）的实际身份与容量。

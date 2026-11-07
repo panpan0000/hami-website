@@ -27,4 +27,4 @@ The following values are a reference from the vendor's SKU comparison table. The
 |        8 |   24 GiB | DT_950x                      |
 |        8 |   16 GiB | DT_950y                      |
 
-The source table does not explain the asterisk on the 126 GiB entries. Do not enable multiple `devices.ascend.configs` entries with the same `chipName`: the scheduler cannot distinguish these SKUs by that field. A `devices.ascend.configs` entry applies to every node whose devices report that `chipName`, so replace the 9582 entry only after validating the target SKU's actual identity and capacity.
+The source table does not explain the asterisk on the 126 GiB entries. Do not enable multiple `devices.ascend.configs` entries with the same `chipName`: the scheduler cannot distinguish these SKUs by that field. A `devices.ascend.configs` entry applies to every node whose devices report that `chipName`, so before replacing the 9582 entry, validate the actual identity and capacity of the target SKU and of every existing node that reports the same `chipName` (including the 9582 nodes).
